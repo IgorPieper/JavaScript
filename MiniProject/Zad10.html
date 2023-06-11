@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        function ocenzuruj(niedozwoloneSlowa, zdanie) {
+
+            let zdanieCenzurowane = zdanie;
+
+            for (let i = 0; i < niedozwoloneSlowa.length; i++) {
+
+                let regex = new RegExp('\\b' + niedozwoloneSlowa[i] + '\\b', 'gi');
+                zdanieCenzurowane = zdanieCenzurowane.replace(regex, '*');
+
+            }
+
+            return zdanieCenzurowane;
+        }
+
+        let niedozwoloneSlowa = ['jajco', 'dupa'];
+        let zdanie = 'Jakieś zdanie dupa super jajco tralalalala';
+
+        let zdanieCenzurowane = ocenzuruj(niedozwoloneSlowa, zdanie);
+
+        console.log(zdanieCenzurowane);
+
+    </script>
+
+</body>
+
+</html>
