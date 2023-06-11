@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        // Funkcja obliczająca pole prostokąta
+        const poleProstokat = (a, b, callback) => callback(a * b);
+
+        // Funkcja obliczająca pole trapezu
+        const poleTrapez = (a, b, h, callback) => callback(((a + b) * h) / 2);
+
+        // Funkcja obliczająca pole równoległoboku
+        const poleRownoleglobok = (a, h, callback) => callback(a * h);
+
+        // Funkcja obliczająca pole trójkąta
+        const poleTrojkat = (a, h, callback) => callback((a * h) / 2);
+
+
+
+        // Wywołanie funkcji z odpowiednimi wartościami i wykorzystanie funkcji anonimowej jako callbacka
+        poleProstokat(2, 3, (wynik) => {
+            console.log('Pole prostokąta: ', wynik);
+        });
+
+        poleTrapez(2, 3, 4, (wynik) => {
+            console.log('Pole trapezu: ', wynik);
+        });
+
+        poleRownoleglobok(2, 3, (wynik) => {
+            console.log('Pole równoległoboku: ', wynik);
+        });
+
+        poleTrojkat(2, 3, (wynik) => {
+            console.log('Pole trójkąta: ', wynik);
+        });
+
+    </script>
+
+</body>
+
+</html>
