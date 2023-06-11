@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        function Prostokat(a, b) {
+            return a * b;
+        }
+
+        function Trapez(a, b, h) {
+            return (a + b) * h * 0.5;
+        }
+
+        function Rownoleglobok(a, h) {
+            return a * h;
+        }
+
+        function Trojkat(a, h) {
+            return (a * h) * 0.5;
+        }
+
+        function Pole() {
+
+            let figura = prompt("Jaka figura cię interesuje?");
+            let pole = 0;
+
+            switch(figura) {
+                case "prostokat":
+                    pole = Prostokat(2, 3);
+                    break;
+                case "trapez":
+                    pole = Trapez(2, 3, 4);
+                    break;
+                case "rownoleglobok":
+                    pole = Rownoleglobok(2, 3);
+                    break;
+                case "trojkat":
+                    pole = Trojkat(2, 3, 4);
+                    break;
+                default:
+                    pole = "Nie mamy takiej figury w bazie";
+                    break;
+            }
+
+            console.log("Pole wynosi: " + pole)
+        }
+
+        Pole();
+
+    </script>
+
+</body>
+
+</html>
