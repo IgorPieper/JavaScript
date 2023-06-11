@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        class Ocena {
+            constructor(przedmiot, wartosc) {
+                this.przedmiot = przedmiot;
+                this.wartosc = wartosc;
+            }
+        }
+
+        class Student {
+            constructor(imie, nazwisko) {
+                this.imie = imie;
+                this.nazwisko = nazwisko;
+                this._oceny = [];
+                this.sredniaOcen = 0;
+            }
+
+            // Metoda Powitalna
+            hello() {
+                return `Witaj ${this.imie} ${this.nazwisko}, Twoja średnia ocen to: ${this.sredniaOcen}.`;
+            }
+
+            // Setter dodający ocenę
+            set ocena(ocena) {
+                if (ocena instanceof Ocena) {
+                    this._oceny.push(ocena);
+                    this.przeliczSredniaOcen();
+                }
+            }
+
+            // Getter pokazujący oceny
+            get pobierzOceny() {
+                let tekstOcen = '';
+                for (let i = 0; i < this._oceny.length; i++) {
+                    const ocena = this._oceny[i];
+                    tekstOcen += `Przedmiot: ${ocena.przedmiot} - ocena ${ocena.wartosc}. `;
+                }
+                return tekstOcen;
+            }
+
+            // Metoda licząca średnią
+            przeliczSredniaOcen() {
+                let suma = 0;
+                for (let i = 0; i < this._oceny.length; i++) {
+                    suma += this._oceny[i].wartosc;
+                }
+                this.sredniaOcen = this._oceny.length > 0 ? suma / this._oceny.length : 0;
+            }
+        }
+
+        let s = new Student('Jan', 'Kowalski');
+
+        s.ocena = new Ocena('WPR', 4);
+        s.ocena = new Ocena('TIN', 3);
+        s.ocena = new Ocena('POJ', 2);
+
+        console.log(s.hello());
+        console.log(s.pobierzOceny);
+        
+    </script>
+
+</body>
+
+</html>
+
+
