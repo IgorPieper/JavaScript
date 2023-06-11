@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        function Pythagorean_Triangle(tops) {
+
+            // Znajdujemy najduższy bok
+            let C = Math.max(tops[0], tops[1], tops[2]);
+
+            // Ustalamy indeks najdłuższego boku
+            let index = tops.indexOf(C);
+
+            // Usuwamy najdłuższy bok z tablicy
+            tops.splice(index, 1);
+
+            let A_Kwadrat = tops[0] * tops[0];
+            let B_Kwadrat = tops[1] * tops[1];
+            let C_Kwadrat = C * C;
+
+            if (A_Kwadrat + B_Kwadrat == C_Kwadrat) {
+                console.log("The triangle is a Pythagorean Triangle");
+            } else {
+                console.log("The triangle is not a Pythagorean Triangle");
+            }
+        }
+
+        Pythagorean_Triangle([3, 4, 5]);
+        
+    </script>
+
+</body>
+
+</html>
+
+
