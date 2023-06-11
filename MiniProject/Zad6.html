@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        function choinkaNoca(wysokosc) {
+
+            for (let i = 0; i < wysokosc; i++) {
+                let linia = "";
+
+                // Liczba gwiazdek zmniejsza się o 1 w każdej iteracji
+                let gwiazdki = "*".repeat(wysokosc - i);
+
+                // Liczba spacji zwiększa się o 2 w każdej iteracji
+                let spacje = " ".repeat(i * 2);
+
+                // Tworzenie linii choinki poprzez połączenie gwiazdek, spacji i kolejnych gwiazdek
+                linia = gwiazdki + spacje + gwiazdki;
+                console.log(linia);
+            }
+
+            // Tworzenie ostatniej linii z gwiazdek o szerokości 2 * wysokość
+            let ostatniaLinia = "*".repeat(wysokosc * 2);
+            console.log(ostatniaLinia);
+        }
+
+        choinkaNoca(6);
+
+    </script>
+
+</body>
+
+</html>
