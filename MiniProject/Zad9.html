@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <script>
+
+        function Pascal(wysokosc) {
+
+            for (let i = 0; i < wysokosc; i++) {
+
+                let row = "";
+
+                for (let j = 0; j <= i; j++) {
+
+                    row += liczbaPascala(i, j) + " ";
+
+                }
+
+                console.log(row);
+            }
+        }
+
+        function liczbaPascala(n, k) {
+
+            if (k == 0 || k == n) {
+
+                return 1;
+
+            } else {
+
+                return liczbaPascala(n - 1, k - 1) + liczbaPascala(n - 1, k);
+            }
+        }
+
+        // Wywołanie funkcji trojkatPascala z wysokością 6
+        Pascal(6);
+       
+    </script>
+
+</body>
+
+</html>
